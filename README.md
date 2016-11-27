@@ -32,7 +32,7 @@ existingObject.extend(true, { a: 2, b: 2 }, { a: 3, c: { e: 1 } })
 ```
 
 <a name="keys"></a>
-## Object.keys() => <code>Array</code>
+## Object.keys() ⇒ <code>Array</code>
 Get an object's keys as an array (this function might already exist in ES5
 browsers).
 
@@ -44,7 +44,7 @@ let keys = Object.keys(existingObject);
 ```
 
 <a name="findIndex"></a>
-## Array.findIndex(f) => <code>Number</code>
+## Array.findIndex(f) ⇒ <code>Number</code>
 Find an element in an array using a callback (this function might already exist
 in ES6 browsers).
 
@@ -61,7 +61,7 @@ let foundIndex = existingArray.findIndex(function(value, index, array) { \/* ...
 ```
 
 <a name="findIndexCallback"></a>
-## findIndexCallback => <code>Boolean</code>
+## findIndexCallback ⇒ <code>Boolean</code>
 **Kind**: global typedef  
 **Returns**: <code>Boolean</code> - True if the current element is the one being searched for.  
 
@@ -73,7 +73,7 @@ let foundIndex = existingArray.findIndex(function(value, index, array) { \/* ...
 
 
 <a name="trim"></a>
-## String.trim() => <code>String</code>
+## String.trim() ⇒ <code>String</code>
 Trims whitespace from beginning/end of a string and returns the result.
 
 **Kind**: instance function of String  
@@ -84,7 +84,7 @@ let trimmedString = existingString.trim();
 ```
 
 <a name="clamp"></a>
-## Math.clamp(a, [min], [max]) => <code>Number</code>
+## Math.clamp(a, [min], [max]) ⇒ <code>Number</code>
 Clamps a value between min and max (or 0 and 1 respectively, if either argument is
 undefined).
 
@@ -98,7 +98,7 @@ undefined).
 | [max] | <code>Number</code> | <code>1</code> | The maximum value. |
 
 <a name="lerp"></a>
-## Math.lerp(a, b, i) => <code>Number</code>
+## Math.lerp(a, b, i) ⇒ <code>Number</code>
 Does a linear interpolation from a to b.
 
 **Kind**: static function  
@@ -111,7 +111,7 @@ Does a linear interpolation from a to b.
 | i | <code>Number</code> | The interpolation value. |
 
 <a name="quadraticInterpolate"></a>
-## Math.quadraticInterpolate(a, b, c, i) => <code>Number</code>
+## Math.quadraticInterpolate(a, b, c, i) ⇒ <code>Number</code>
 Does a 1-dimensional quadratic interpolation from a (at i = 0) to c (at i = 1),
 with b as the control offset.
 
@@ -126,7 +126,7 @@ with b as the control offset.
 | i | <code>Number</code> | The interpolation value. |
 
 <a name="cubicInterpolate"></a>
-## Math.cubicInterpolate(a, b, c, d, i) => <code>Number</code>
+## Math.cubicInterpolate(a, b, c, d, i) ⇒ <code>Number</code>
 Does a 1-dimensional cubic interpolation from a (at i = 0) to d (at i = 1), with b
 and c as the control offsets.
 
@@ -142,7 +142,7 @@ and c as the control offsets.
 | i | <code>Number</code> | The interpolation value. |
 
 <a name="radians"></a>
-## Math.radians(degrees) => <code>Number</code>
+## Math.radians(degrees) ⇒ <code>Number</code>
 Converts degrees to radians.
 
 **Kind**: static function  
@@ -153,7 +153,7 @@ Converts degrees to radians.
 | degrees | <code>Number</code> | The value to convert to radians. |
 
 <a name="degrees"></a>
-## Math.degrees(radians) => <code>Number</code>
+## Math.degrees(radians) ⇒ <code>Number</code>
 Converts radians to degrees.
 
 **Kind**: static function  
@@ -164,7 +164,7 @@ Converts radians to degrees.
 | radians | <code>Number</code> | The value to convert to degrees. |
 
 <a name="randomBetween"></a>
-## Math.randomBetween(min, max) => <code>Number</code>
+## Math.randomBetween(min, max) ⇒ <code>Number</code>
 Returns a random float between min (inclusive) and max (exclusive).
 
 **Kind**: static function  
@@ -176,7 +176,7 @@ Returns a random float between min (inclusive) and max (exclusive).
 | max | <code>Number</code> | The maximum value (exclusive). |
 
 <a name="randomIntBetween"></a>
-## Math.randomIntBetween(min, max) => <code>Number</code>
+## Math.randomIntBetween(min, max) ⇒ <code>Number</code>
 Return a random integer between min (inclusive) and max (inclusive).
 
 **Kind**: static function  
@@ -188,7 +188,7 @@ Return a random integer between min (inclusive) and max (inclusive).
 | max | <code>Number</code> | The maximum value (inclusive). |
 
 <a name="cltRandom"></a>
-## Math.cltRandom(mu, sigma, samples) => <code>Number</code>
+## Math.cltRandom(mu, sigma, samples) ⇒ <code>Number</code>
 Return a normally-distributed value (uses central limit theorem).
 
 **Kind**: static function  
@@ -201,7 +201,7 @@ Return a normally-distributed value (uses central limit theorem).
 | samples | <code>Number</code> | The number of samples (ie. how shallow/steep the curve is, 1 is uniform). |
 
 <a name="cltRandomInt"></a>
-## Math.cltRandomInt(min, max) => <code>Number</code>
+## Math.cltRandomInt(min, max) ⇒ <code>Number</code>
 Return a normally-distributed integer between min (inclusive) and max (inclusive).
 
 **Kind**: static function  
