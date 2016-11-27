@@ -108,9 +108,9 @@ if (!Object.keys) {
 /**
  * @callback findIndexCallback
  * @param value The value of the current element.
- * @param {number} index The index of the current element.
+ * @param {Number} index The index of the current element.
  * @param {Array} array The array being searched.
- * @returns {boolean} True if the current element is the one being searched for.
+ * @returns {Boolean} True if the current element is the one being searched for.
  */
 /**
  * @name findIndex
@@ -118,7 +118,7 @@ if (!Object.keys) {
  * @instance
  * @description Find an element in an array using a callback (this function might already exist
  * in ES6 browsers).
- * @returns {number} The matching element's index or -1 if no matching element was found.
+ * @returns {Number} The matching element's index or -1 if no matching element was found.
  * @param {findIndexCallback} f A callback that will be called for each item in the array.
  * @example
  * let foundIndex = existingArray.findIndex(function(value, index, array) { \/* ... *\/ });
@@ -146,7 +146,7 @@ if (!Array.prototype.findIndex) {
  * @function
  * @instance
  * @description Trims whitespace from beginning/end of a string and returns the result.
- * @returns {string} The trimmed string.
+ * @returns {String} The trimmed string.
  * @example
  * let trimmedString = existingString.trim();
  */
@@ -167,10 +167,10 @@ if (!String.prototype.trim) {
  * @static
  * @description Clamps a value between min and max (or 0 and 1 respectively, if either argument is
  * undefined).
- * @param {number} a The number to clamp.
- * @param {number} [min=0] The minimum value.
- * @param {number} [max=1] The maximum value.
- * @returns {number} The clamped value.
+ * @param {Number} a The number to clamp.
+ * @param {Number} [min=0] The minimum value.
+ * @param {Number} [max=1] The maximum value.
+ * @returns {Number} The clamped value.
  */
 Math.clamp = function(a, min, max) {
 	if (min === undefined) { min = 0; };
@@ -183,10 +183,10 @@ Math.clamp = function(a, min, max) {
  * @function
  * @static
  * @description Does a linear interpolation from a to b.
- * @param {number} a The starting value.
- * @param {number} b The finishing value.
- * @param {number} i The interpolation value.
- * @returns {number} An interpolated value between a and b.
+ * @param {Number} a The starting value.
+ * @param {Number} b The finishing value.
+ * @param {Number} i The interpolation value.
+ * @returns {Number} An interpolated value between a and b.
  */
 Math.lerp = function(a, b, i) {
 	return a * (1 - i) + b * i;
@@ -198,11 +198,11 @@ Math.lerp = function(a, b, i) {
  * @static
  * @description Does a 1-dimensional quadratic interpolation from a (at i = 0) to c (at i = 1),
  * with b as the control offset.
- * @param {number} a The starting value.
- * @param {number} b The control offset.
- * @param {number} c The finishing value.
- * @param {number} i The interpolation value.
- * @returns {number} An interpolated value between a and c.
+ * @param {Number} a The starting value.
+ * @param {Number} b The control offset.
+ * @param {Number} c The finishing value.
+ * @param {Number} i The interpolation value.
+ * @returns {Number} An interpolated value between a and c.
  */
 Math.quadraticInterpolate = function(a, b, c, i) {
 	var b0 = (1 - i) * (1 - i),
@@ -217,12 +217,12 @@ Math.quadraticInterpolate = function(a, b, c, i) {
  * @static
  * @description Does a 1-dimensional cubic interpolation from a (at i = 0) to d (at i = 1), with b
  * and c as the control offsets.
- * @param {number} a The starting value.
- * @param {number} b The first control offset.
- * @param {number} c The second control offset.
- * @param {number} d The finishing value.
- * @param {number} i The interpolation value.
- * @returns {number} An interpolated value between a and d.
+ * @param {Number} a The starting value.
+ * @param {Number} b The first control offset.
+ * @param {Number} c The second control offset.
+ * @param {Number} d The finishing value.
+ * @param {Number} i The interpolation value.
+ * @returns {Number} An interpolated value between a and d.
  */
 Math.cubicInterpolate = function(a, b, c, d, i) {
 	var b0 = (1 - i) * (1 - i) * (1 - i),
@@ -237,8 +237,8 @@ Math.cubicInterpolate = function(a, b, c, d, i) {
  * @function
  * @static
  * @description Converts degrees to radians.
- * @param {number} degrees The value to convert to radians.
- * @returns {number} A value in radians.
+ * @param {Number} degrees The value to convert to radians.
+ * @returns {Number} A value in radians.
  */
 Math.radians = function(degrees) {
 	return (Math.PI / 180) * degrees;
@@ -249,8 +249,8 @@ Math.radians = function(degrees) {
  * @function
  * @static
  * @description Converts radians to degrees.
- * @param {number} radians The value to convert to degrees.
- * @returns {number} A value in degrees.
+ * @param {Number} radians The value to convert to degrees.
+ * @returns {Number} A value in degrees.
  */
 Math.degrees = function(radians) {
 	return (180 / Math.PI) * radians;
@@ -261,9 +261,9 @@ Math.degrees = function(radians) {
  * @function
  * @static
  * @description Returns a random float between min (inclusive) and max (exclusive).
- * @param {number} min The minimum value (inclusive).
- * @param {number} max The maximum value (exclusive).
- * @returns {number} A random float.
+ * @param {Number} min The minimum value (inclusive).
+ * @param {Number} max The maximum value (exclusive).
+ * @returns {Number} A random float.
  */
 Math.randomBetween = function(min, max) {
 	return Math.random() * (max - min) + min;
@@ -274,9 +274,9 @@ Math.randomBetween = function(min, max) {
  * @function
  * @static
  * @description Return a random integer between min (inclusive) and max (inclusive).
- * @param {number} min The minimum value (inclusive).
- * @param {number} max The maximum value (inclusive).
- * @returns {number} A random integer.
+ * @param {Number} min The minimum value (inclusive).
+ * @param {Number} max The maximum value (inclusive).
+ * @returns {Number} A random integer.
  */
 Math.randomIntBetween = function(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -287,10 +287,10 @@ Math.randomIntBetween = function(min, max) {
  * @function
  * @static
  * @description Return a normally-distributed value (uses central limit theorem).
- * @param {number} mu The mean value.
- * @param {number} sigma The standard deviation.
- * @param {number} samples The number of samples (ie. how shallow/steep the curve is, 1 is uniform).
- * @returns {number} A random float.
+ * @param {Number} mu The mean value.
+ * @param {Number} sigma The standard deviation.
+ * @param {Number} samples The number of samples (ie. how shallow/steep the curve is, 1 is uniform).
+ * @returns {Number} A random float.
  */
 Math.cltRandom = function(mu, sigma, samples) {
 	mu = mu || 0.5;
@@ -308,9 +308,9 @@ Math.cltRandom = function(mu, sigma, samples) {
  * @function
  * @static
  * @description Return a normally-distributed integer between min (inclusive) and max (inclusive).
- * @param {number} min The minimum value.
- * @param {number} max The maximum value.
- * @returns {number} A random integer.
+ * @param {Number} min The minimum value.
+ * @param {Number} max The maximum value.
+ * @returns {Number} A random integer.
  */
 Math.cltRandomInt = function(min, max) {
 	return min + Math.cltRandom(0.5, 0.5, 2) * (max - min);
