@@ -32,7 +32,7 @@ existingObject.extend(true, { a: 2, b: 2 }, { a: 3, c: { e: 1 } })
 ```
 
 <a name="keys"></a>
-## Object.keys() ⇒ <code>Array</code>
+## Object.keys() ? <code>Array</code>
 Get an object's keys as an array (this function might already exist in ES5
 browsers).
 
@@ -44,12 +44,12 @@ let keys = Object.keys(existingObject);
 ```
 
 <a name="findIndex"></a>
-## Array.findIndex(f) ⇒ <code>number</code>
+## Array.findIndex(f) ? <code>Number</code>
 Find an element in an array using a callback (this function might already exist
 in ES6 browsers).
 
 **Kind**: instance function of Array  
-**Returns**: <code>number</code> - The matching element's index or -1 if no matching element was found.  
+**Returns**: <code>Number</code> - The matching element's index or -1 if no matching element was found.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -61,154 +61,154 @@ let foundIndex = existingArray.findIndex(function(value, index, array) { \/* ...
 ```
 
 <a name="findIndexCallback"></a>
-## findIndexCallback ⇒ <code>boolean</code>
+## findIndexCallback ? <code>Boolean</code>
 **Kind**: global typedef  
-**Returns**: <code>boolean</code> - True if the current element is the one being searched for.  
+**Returns**: <code>Boolean</code> - True if the current element is the one being searched for.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | value |  | The value of the current element. |
-| index | <code>number</code> | The index of the current element. |
+| index | <code>Number</code> | The index of the current element. |
 | array | <code>Array</code> | The array being searched. |
 
 
 <a name="trim"></a>
-## String.trim() ⇒ <code>string</code>
+## String.trim() ? <code>String</code>
 Trims whitespace from beginning/end of a string and returns the result.
 
 **Kind**: instance function of String  
-**Returns**: <code>string</code> - The trimmed string.  
+**Returns**: <code>String</code> - The trimmed string.  
 **Example**  
 ```js
 let trimmedString = existingString.trim();
 ```
 
 <a name="clamp"></a>
-## Math.clamp(a, [min], [max]) ⇒ <code>number</code>
+## Math.clamp(a, [min], [max]) ? <code>Number</code>
 Clamps a value between min and max (or 0 and 1 respectively, if either argument is
 undefined).
 
 **Kind**: static function  
-**Returns**: <code>number</code> - The clamped value.  
+**Returns**: <code>Number</code> - The clamped value.  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| a | <code>number</code> |  | The number to clamp. |
-| [min] | <code>number</code> | <code>0</code> | The minimum value. |
-| [max] | <code>number</code> | <code>1</code> | The maximum value. |
+| a | <code>Number</code> |  | The number to clamp. |
+| [min] | <code>Number</code> | <code>0</code> | The minimum value. |
+| [max] | <code>Number</code> | <code>1</code> | The maximum value. |
 
 <a name="lerp"></a>
-## Math.lerp(a, b, i) ⇒ <code>number</code>
+## Math.lerp(a, b, i) ? <code>Number</code>
 Does a linear interpolation from a to b.
 
 **Kind**: static function  
-**Returns**: <code>number</code> - An interpolated value between a and b.  
+**Returns**: <code>Number</code> - An interpolated value between a and b.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>number</code> | The starting value. |
-| b | <code>number</code> | The finishing value. |
-| i | <code>number</code> | The interpolation value. |
+| a | <code>Number</code> | The starting value. |
+| b | <code>Number</code> | The finishing value. |
+| i | <code>Number</code> | The interpolation value. |
 
 <a name="quadraticInterpolate"></a>
-## Math.quadraticInterpolate(a, b, c, i) ⇒ <code>number</code>
+## Math.quadraticInterpolate(a, b, c, i) ? <code>Number</code>
 Does a 1-dimensional quadratic interpolation from a (at i = 0) to c (at i = 1),
 with b as the control offset.
 
 **Kind**: static function  
-**Returns**: <code>number</code> - An interpolated value between a and c.  
+**Returns**: <code>Number</code> - An interpolated value between a and c.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>number</code> | The starting value. |
-| b | <code>number</code> | The control offset. |
-| c | <code>number</code> | The finishing value. |
-| i | <code>number</code> | The interpolation value. |
+| a | <code>Number</code> | The starting value. |
+| b | <code>Number</code> | The control offset. |
+| c | <code>Number</code> | The finishing value. |
+| i | <code>Number</code> | The interpolation value. |
 
 <a name="cubicInterpolate"></a>
-## Math.cubicInterpolate(a, b, c, d, i) ⇒ <code>number</code>
+## Math.cubicInterpolate(a, b, c, d, i) ? <code>Number</code>
 Does a 1-dimensional cubic interpolation from a (at i = 0) to d (at i = 1), with b
 and c as the control offsets.
 
 **Kind**: static function  
-**Returns**: <code>number</code> - An interpolated value between a and d.  
+**Returns**: <code>Number</code> - An interpolated value between a and d.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>number</code> | The starting value. |
-| b | <code>number</code> | The first control offset. |
-| c | <code>number</code> | The second control offset. |
-| d | <code>number</code> | The finishing value. |
-| i | <code>number</code> | The interpolation value. |
+| a | <code>Number</code> | The starting value. |
+| b | <code>Number</code> | The first control offset. |
+| c | <code>Number</code> | The second control offset. |
+| d | <code>Number</code> | The finishing value. |
+| i | <code>Number</code> | The interpolation value. |
 
 <a name="radians"></a>
-## Math.radians(degrees) ⇒ <code>number</code>
+## Math.radians(degrees) ? <code>Number</code>
 Converts degrees to radians.
 
 **Kind**: static function  
-**Returns**: <code>number</code> - A value in radians.  
+**Returns**: <code>Number</code> - A value in radians.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| degrees | <code>number</code> | The value to convert to radians. |
+| degrees | <code>Number</code> | The value to convert to radians. |
 
 <a name="degrees"></a>
-## Math.degrees(radians) ⇒ <code>number</code>
+## Math.degrees(radians) ? <code>Number</code>
 Converts radians to degrees.
 
 **Kind**: static function  
-**Returns**: <code>number</code> - A value in degrees.  
+**Returns**: <code>Number</code> - A value in degrees.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| radians | <code>number</code> | The value to convert to degrees. |
+| radians | <code>Number</code> | The value to convert to degrees. |
 
 <a name="randomBetween"></a>
-## Math.randomBetween(min, max) ⇒ <code>number</code>
+## Math.randomBetween(min, max) ? <code>Number</code>
 Returns a random float between min (inclusive) and max (exclusive).
 
 **Kind**: static function  
-**Returns**: <code>number</code> - A random float.  
+**Returns**: <code>Number</code> - A random float.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| min | <code>number</code> | The minimum value (inclusive). |
-| max | <code>number</code> | The maximum value (exclusive). |
+| min | <code>Number</code> | The minimum value (inclusive). |
+| max | <code>Number</code> | The maximum value (exclusive). |
 
 <a name="randomIntBetween"></a>
-## Math.randomIntBetween(min, max) ⇒ <code>number</code>
+## Math.randomIntBetween(min, max) ? <code>Number</code>
 Return a random integer between min (inclusive) and max (inclusive).
 
 **Kind**: static function  
-**Returns**: <code>number</code> - A random integer.  
+**Returns**: <code>Number</code> - A random integer.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| min | <code>number</code> | The minimum value (inclusive). |
-| max | <code>number</code> | The maximum value (inclusive). |
+| min | <code>Number</code> | The minimum value (inclusive). |
+| max | <code>Number</code> | The maximum value (inclusive). |
 
 <a name="cltRandom"></a>
-## Math.cltRandom(mu, sigma, samples) ⇒ <code>number</code>
+## Math.cltRandom(mu, sigma, samples) ? <code>Number</code>
 Return a normally-distributed value (uses central limit theorem).
 
 **Kind**: static function  
-**Returns**: <code>number</code> - A random float.  
+**Returns**: <code>Number</code> - A random float.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mu | <code>number</code> | The mean value. |
-| sigma | <code>number</code> | The standard deviation. |
-| samples | <code>number</code> | The number of samples (ie. how shallow/steep the curve is, 1 is uniform). |
+| mu | <code>Number</code> | The mean value. |
+| sigma | <code>Number</code> | The standard deviation. |
+| samples | <code>Number</code> | The number of samples (ie. how shallow/steep the curve is, 1 is uniform). |
 
 <a name="cltRandomInt"></a>
-## Math.cltRandomInt(min, max) ⇒ <code>number</code>
+## Math.cltRandomInt(min, max) ? <code>Number</code>
 Return a normally-distributed integer between min (inclusive) and max (inclusive).
 
 **Kind**: static function  
-**Returns**: <code>number</code> - A random integer.  
+**Returns**: <code>Number</code> - A random integer.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| min | <code>number</code> | The minimum value. |
-| max | <code>number</code> | The maximum value. |
+| min | <code>Number</code> | The minimum value. |
+| max | <code>Number</code> | The maximum value. |
 
