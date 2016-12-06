@@ -2,7 +2,7 @@
 A collection of useful functions
 
 * [Array.shuffle()](#shuffle)
-* [Object.extend([deep], ...arguments)](#shuffle) ⇒ <code>Object</code>
+* [Object.extend([deep], ...arguments)](#extend) ⇒ <code>Object</code>
 * [Object.keys()](#keys) ⇒ <code>Array</code>
 * [Array.findIndex(f)](#findIndex) ⇒ <code>Number</code>
 * [String.trim()](#trim) ⇒ <code>String</code>
