@@ -1,6 +1,22 @@
 # commonjs
 A collection of useful functions
 
+* [Array.shuffle()](#shuffle)
+* [Object.extend([deep], ...arguments)](#shuffle) ⇒ <code>Object</code>
+* [Object.keys()](#keys) ⇒ <code>Array</code>
+* [Array.findIndex(f)](#findIndex) ⇒ <code>Number</code>
+* [String.trim()](#trim) ⇒ <code>String</code>
+* [Math.clamp(a, [min], [max])](#clamp) ⇒ <code>Number</code>
+* [Math.lerp(a, b, i)](#lerp) ⇒ <code>Number</code>
+* [Math.quadraticInterpolate(a, b, c, i)](#quadraticInterpolate) ⇒ <code>Number</code>
+* [Math.cubicInterpolate(a, b, c, d, i)](#cubicInterpolate) ⇒ <code>Number</code>
+* [Math.radians(degrees)](#radians) ⇒ <code>Number</code>
+* [Math.degrees(radians)](#degrees) ⇒ <code>Number</code>
+* [Math.randomBetween(min, max)](#randomBetween) ⇒ <code>Number</code>
+* [Math.randomIntBetween(min, max)](#randomIntBetween) ⇒ <code>Number</code>
+* [Math.cltRandom(mu, sigma, samples)](#cltRandom) ⇒ <code>Number</code>
+* [Math.cltRandomInt(min, max)](#cltRandomInt) ⇒ <code>Number</code>
+
 <a name="shuffle"></a>
 ## Array.shuffle()
 In-place array shuffle (using Fisher-Yates shuffle).
@@ -12,7 +28,7 @@ existingArray.shuffle();
 ```
 
 <a name="extend"></a>
-## Object.extend([deep], ...arguments)
+## Object.extend([deep], ...arguments) ⇒ <code>Object</code>
 In-place object extend, merges properties of all objects in the arguments list into
 the target object. If the first argument is a boolean set to true, then do a deep extend
 (recursively extends all sub-objects and their properties).
