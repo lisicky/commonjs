@@ -18,17 +18,25 @@ the target object. If the first argument is a boolean set to true, then do a dee
 (recursively extends all sub-objects and their properties).
 
 **Kind**: instance function of Object  
+**Returns**: <code>Object</code> - The merged object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [deep] | <code>Boolean</code> | If set to true, do a deep extend. |
-| ...arguments | <code>\*</code> | The objects from which to merge properties (properties are merged from left to right). |
+| ...arguments | <code>Object</code> | The objects from which to merge properties (properties are merged from left to right). |
 
 **Example**  
 ```js
-existingObject = { a: 1, b: 1, c: { d: 1 } }
-existingObject.extend(true, { a: 2, b: 2 }, { a: 3, c: { e: 1 } })
+// Demonstrates in-place usage
+var existingObject = { a: 1, b: 1, c: { d: 1 } };
+existingObject.extend(true, { a: 2, b: 2 }, { a: 3, c: { e: 1 } });
 // existingObject is now { a: 3, b: 2, c: { d: 1, e: 1 } }
+```
+**Example**  
+```js
+// Demonstrates using the return value to create a new object
+var newObject = {}.extend({ a: 1, b: 1, c: 1 }, { a: 2, b: 2 }, { a: 3, c: 2 });
+// newObject is { a: 3, b: 2, c: 2 }
 ```
 
 <a name="keys"></a>
