@@ -48,6 +48,7 @@ Object.defineProperty(Object.prototype, "extend", {
 	configurable: true,
 	writable: true,
 	value: function() {
+		"use strict";
 		var i = 0,
 			length = arguments.length,
 			deep = false,
@@ -93,7 +94,7 @@ Object.defineProperty(Object.prototype, "extend", {
  * browsers).
  * @returns {Array} An array of keys contained in the object.
  * @example
- * let keys = Object.keys(existingObject);
+ * var keys = Object.keys(existingObject);
  */
 if (!Object.keys) {
 	Object.defineProperty(Object.prototype, "keys", {
@@ -128,7 +129,7 @@ if (!Object.keys) {
  * @returns {Number} The matching element's index or -1 if no matching element was found.
  * @param {findIndexCallback} f A callback that will be called for each item in the array.
  * @example
- * let foundIndex = existingArray.findIndex(function(value, index, array) { \/* ... *\/ });
+ * var foundIndex = existingArray.findIndex(function(value, index, array) { \/* ... *\/ });
  */
 if (!Array.prototype.findIndex) {
 	Object.defineProperty(Array.prototype, "findIndex", {
@@ -155,7 +156,7 @@ if (!Array.prototype.findIndex) {
  * @description Trims whitespace from beginning/end of a string and returns the result.
  * @returns {String} The trimmed string.
  * @example
- * let trimmedString = existingString.trim();
+ * var trimmedString = existingString.trim();
  */
 if (!String.prototype.trim) {
 	Object.defineProperty(String.prototype, "trim", {
@@ -300,6 +301,7 @@ Math.randomIntBetween = function(min, max) {
  * @returns {Number} A random float.
  */
 Math.cltRandom = function(mu, sigma, samples) {
+	"use strict";
 	mu = mu || 0.5;
 	sigma = sigma || 0.5;
 	samples = samples || 2;
