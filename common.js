@@ -53,7 +53,7 @@ Object.defineProperty(Object.prototype, "extend", {
 			length = arguments.length,
 			deep = false,
 			merge = function(target, source) {	// Merge source object into target object
-				for (let p in source) {
+				for (var p in source) {
 					if (source.hasOwnProperty(p)) {
 						if (	// If this is a deep extend, recursively extend properties
 							deep &&
@@ -79,7 +79,7 @@ Object.defineProperty(Object.prototype, "extend", {
 		
 		// Merge each object in the arguments list
 		for (; i < length; i++) {
-			let o = arguments[i];
+			var o = arguments[i];
 			merge(this, o);
 		}
 		return this;
@@ -306,7 +306,7 @@ Math.cltRandom = function(mu, sigma, samples) {
 	sigma = sigma || 0.5;
 	samples = samples || 2;
 	var total = 0;
-	for (let i = samples; i--;) {
+	for (var i = samples; i--;) {
 		total += Math.random();
 	}
 	return mu + (total - samples / 2) / (samples / 2) * sigma;
