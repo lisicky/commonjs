@@ -64,7 +64,7 @@ browsers).
 **Returns**: <code>Array</code> - An array of keys contained in the object.  
 **Example**  
 ```js
-let keys = Object.keys(existingObject);
+var keys = Object.keys(existingObject);
 ```
 
 <a name="findIndex"></a>
@@ -81,7 +81,7 @@ in ES6 browsers).
 
 **Example**  
 ```js
-let foundIndex = existingArray.findIndex(function(value, index, array) { \/* ... *\/ });
+var foundIndex = existingArray.findIndex(function(value, index, array) { \/* ... *\/ });
 ```
 
 <a name="findIndexCallback"></a>
@@ -104,7 +104,7 @@ Trims whitespace from beginning/end of a string and returns the result.
 **Returns**: <code>String</code> - The trimmed string.  
 **Example**  
 ```js
-let trimmedString = existingString.trim();
+var trimmedString = existingString.trim();
 ```
 
 <a name="clamp"></a>
