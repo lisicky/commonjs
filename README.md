@@ -1,4 +1,4 @@
-# commonjs
+# common.js
 A collection of useful functions
 
 * [Array.shuffle()](#shuffle)
