@@ -29,6 +29,86 @@ vec.cpy = a => vec(a);
 vec.map = (a, f) => ({ x: f(a.x), y: f(a.y) });
 vec.str = (a, s = ', ') => `${a.x}${s}${a.y}`;
 
+// Little matrix library
+const mat = (m = 4, n = 4, entries = []) => ({
+    m, n,
+    entries: entries.concat(Array(m * n).fill(0)).slice(0, m * n)
+});
+mat.identity = n => Array(n * n).fill(0).map((v, i) => +(Math.floor(i / n) == i % n));
+mat.get = (a, i, j) => a.entries[(j - 1) + (i - 1) * a.n];
+mat.set = (a, i, j, v) => { a.entries[(j - 1) + (i - 1) * a.n] = v; };
+mat.row = (a, m) => {
+    const s = (m - 1) * a.n;
+    return a.entries.slice(s, s + a.n);
+};
+mat.col = (a, n) => Array.times(i => mat.get(a, (i + 1), n), a.m);
+mat.add = (a, b) => a.m == b.m && a.n == b.n && mat.map(a, (v, i) => v + b.entries[i]);
+mat.sub = (a, b) => a.m == b.m && a.n == b.n && mat.map(a, (v, i) => v - b.entries[i]);
+mat.mul = (a, b) => {
+    if (a.n !== b.m) { return false; }
+    const result = mat(a.m, b.n);
+    for (let i = 1; i <= a.m; i++) {
+        for (let j = 1; j <= b.n; j++) {
+            mat.set(result, i, j, Math.dot(mat.row(a, i), mat.col(b, j)));
+        }
+    }
+    return result;
+};
+mat.scale = (a, b) => mat.map(a, v => v * b);
+mat.trans = a => mat(a.n, a.m, Array.times(i => mat.col(a, (i + 1)), a.n).flat());
+mat.minor = (a, i, j) => {
+    if (a.m !== a.n) { return false; }
+    const entries = [];
+    for (let ii = 1; ii <= a.m; ii++) {
+        if (ii == i) { continue; }
+        for (let jj = 1; jj <= a.n; jj++) {
+            if (jj == j) { continue; }
+            entries.push(mat.get(a, ii, jj));
+        }
+    }
+    return mat(a.m - 1, a.n - 1, entries);
+};
+mat.det = a => {
+    if (a.m !== a.n) { return false; }
+    if (a.m == 1) {
+        return a.entries[0];
+    }
+    if (a.m == 2) {
+        return a.entries[0] * a.entries[3] - a.entries[1] * a.entries[2];
+    }
+    let total = 0, sign = 1;
+    for (let j = 1; j <= a.n; j++) {
+        total += sign * a.entries[j - 1] * mat.det(mat.minor(a, 1, j));
+        sign *= -1;
+    }
+    return total;
+};
+mat.nor = a => {
+    if (a.m !== a.n) { return false; }
+    const d = mat.det(a);
+    return mat.map(a, i => i * d);
+};
+mat.adj = a => {
+    const minors = mat(a.m, a.n);
+    for (let i = 1; i <= a.m; i++) {
+        for (let j = 1; j <= a.n; j++) {
+            mat.set(minors, i, j, mat.det(mat.minor(a, i, j)));
+        }
+    }
+    const cofactors = mat.map(minors, (v, i) => v * (i % 2 ? -1 : 1));
+    return mat.trans(cofactors);
+};
+mat.inv = a => {
+    if (a.m !== a.n) { return false; }
+    const d = mat.det(a);
+    if (d == 0) { return false; }
+    return mat.scale(mat.adj(a), 1 / d);
+};
+mat.eq = (a, b) => a.m === b.m && a.n === b.n && mat.str(a) === mat.str(b);
+mat.cpy = a => mat(a.m, a.n, [...a.entries]);
+mat.map = (a, f) => mat(a.m, a.n, a.entries.map(f));
+mat.str = (a, s = ' ') => a.entries.chunk(a.n).map(r => r.join(s)).join('');
+
 // Useful math functions
 Math.floatEquals = (a, b, p = Number.EPSILON) => Math.abs(a - b) < p;
 Math.clamp = (a, min = 0, max = 1) => a < min ? min : (a > max ? max : a);
