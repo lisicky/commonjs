@@ -123,11 +123,11 @@ Math.degrees = radians => (180 / Math.PI) * radians;
 Math.randomBetween = (min, max) => Math.random() * (max - min) + min;                       // Exclusive max
 Math.randomIntBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;    // Inclusive max
 Math.cltRandom = (mu = 0.5, sigma = 0.5, samples = 2) => {
-	let total = 0;
-	for (let i = samples; i--;) {
-		total += Math.random();
-	}
-	return mu + (total - samples / 2) / (samples / 2) * sigma;
+    let total = 0;
+    for (let i = samples; i--;) {
+        total += Math.random();
+    }
+    return mu + (total - samples / 2) / (samples / 2) * sigma;
 };
 Math.cltRandomInt = (min, max) => min + Math.cltRandom(0.5, 0.5, 2) * (max - min);
 Math.weightedRandom = w => {
@@ -156,5 +156,5 @@ Object.defineProperty(Array.prototype, 'chunk', { value: function(n) {
     return Array.times(i => this.slice(i * n, i * n + n), Math.ceil(this.length / n));
 } });
 Object.defineProperty(Array.prototype, 'shuffle', { value: function() {
-	return this.map(a => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map(a => a[1]);
+    return this.map(a => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map(a => a[1]);
 } });
