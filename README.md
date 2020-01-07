@@ -1,15 +1,11 @@
 # common.js
 
----
-
 A small library of useful functions
 
 * [vec](#vec)
 * [mat](#mat)
 * [Math](#Math)
 * [Array](#Array)
-
----
 
 # vec
 
@@ -72,8 +68,6 @@ Call a function on each component of a vector and return the result
 
 ### `vec.str(vec a, string s?)`
 Get the string representation of a vector. Default separator is `', '`
-
----
 
 # mat
 
@@ -139,8 +133,6 @@ Call a function on every element of a matrix and return the result
 ### `mat.str(matrix a, string s?)`
 Get a string representation of a matrix. The default separator is `' '`
 
----
-
 # Math
 
 Some useful math functions
@@ -195,8 +187,6 @@ Return an interpolated value from an array. `a` should be an array of numbers, a
 
 ### `Math.dot(a, b)`
 Get the dot product of two vectors. `a` and `b` should be arrays of numbers
-
----
 
 # Array
 
