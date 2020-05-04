@@ -138,10 +138,10 @@ Math.weightedRandom = w => {
     }
     return n - 1;
 };
-Math.lerpArray = (a, i) => {
+Math.lerpArray = (a, i, f = Math.lerp) => {
     const s = i * (a.length - 1);
     const p = Math.clamp(Math.trunc(s), 0, a.length - 1);
-    return Math.lerp(a[p] || 0, a[p + 1] || 0, Math.frac(s));
+    return f(a[p] || 0, a[p + 1] || 0, Math.frac(s));
 };
 Math.dot = (a, b) => a.reduce((n, v, i) => n + v * b[i], 0);
 
