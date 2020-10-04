@@ -394,6 +394,8 @@ mat.map = (a, f) => mat(a.m, a.n, a.entries.map(f));
  */
 mat.str = (a, ms = ' ', ns = '\n') => a.entries.chunk(a.n).map(r => r.join(ms)).join(ns);
 
+/** @class Math */
+
 /**
  * Check if two numbers are approximately equal
  * @param {number} a
@@ -565,6 +567,8 @@ Math.lerpArray = (a, i, f = Math.lerp) => {
  */
 Math.dot = (a, b) => a.reduce((n, v, i) => n + v * b[i], 0);
 
+/** @class Array */
+
 /**
  * A function for generating array values
  * @callback timesCallback
@@ -589,6 +593,9 @@ Array.range = n => Array.times(i => i, n);
 
 /**
  * Return array[i] with positive and negative wrapping
+ * @name at
+ * @function
+ * @memberof Array.prototype
  * @param {number} i
  * @return {*}
  */
@@ -601,6 +608,9 @@ Object.defineProperty(Array.prototype, 'at', {
 
 /**
  * Chop an array into chunks of size n
+ * @name chunk
+ * @function
+ * @memberof Array.prototype
  * @param {number} n The chunk size
  * @return {Array<Array<*>>}
  */
@@ -612,6 +622,9 @@ Object.defineProperty(Array.prototype, 'chunk', {
 
 /**
  * Randomly shuffle an array in-place
+ * @name shuffle
+ * @function
+ * @memberof Array.prototype
  * @return {Array<*>} The shuffled array
  */
 Object.defineProperty(Array.prototype, 'shuffle', {
