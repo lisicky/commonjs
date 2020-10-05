@@ -186,7 +186,7 @@ const mat = (m = 4, n = 4, entries = []) => ({
  * @param {number} n The size of the matrix
  * @return {mat}
  */
-mat.identity = n => Array(n * n).fill(0).map((v, i) => +(Math.floor(i / n) == i % n));
+mat.identity = n => mat(n, n, Array(n * n).fill(0).map((v, i) => +(Math.floor(i / n) == i % n)));
 
 /**
  * Get an entry from a matrix
