@@ -63,7 +63,7 @@ A small library of useful functions
     * [.unlerp(a, b, i)](#Math.unlerp) ⇒ <code>number</code>
     * [.blerp(c00, c10, c01, c11, ix, iy)](#Math.blerp) ⇒ <code>number</code>
     * [.remap(i, a1, a2, b1, b2)](#Math.remap) ⇒ <code>number</code>
-    * [.smoothstep(a, b, i)](#Math.smoothstep)
+    * [.smoothstep(a, b, i)](#Math.smoothstep) ⇒ <code>number</code>
     * [.radians(degrees)](#Math.radians) ⇒ <code>number</code>
     * [.degrees(radians)](#Math.degrees) ⇒ <code>number</code>
     * [.randomBetween(min, max)](#Math.randomBetween) ⇒ <code>number</code>
@@ -80,11 +80,12 @@ A small library of useful functions
 Check if two numbers are approximately equal
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>boolean</code> - True if numbers a and b are approximately equal  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| a | <code>number</code> |  |  |
-| b | <code>number</code> |  |  |
+| a | <code>number</code> |  | Number a |
+| b | <code>number</code> |  | Number b |
 | [p] | <code>number</code> | <code>Number.EPSILON</code> | The precision value |
 
 <a name="Math.clamp"></a>
@@ -93,10 +94,11 @@ Check if two numbers are approximately equal
 Clamp a number between min and max
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - A clamped number  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>number</code> |  |
+| a | <code>number</code> | The number to clamp |
 | min | <code>number</code> | The minimum value |
 | max | <code>number</code> | The maximum value |
 
@@ -106,10 +108,11 @@ Clamp a number between min and max
 Get the fractional part of a number
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - The fractional part of the number  
 
-| Param | Type |
-| --- | --- |
-| a | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | <code>number</code> | The number from which to get the fractional part |
 
 <a name="Math.lerp"></a>
 
@@ -117,12 +120,13 @@ Get the fractional part of a number
 Do a linear interpolation between a and b
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - An interpolated value in the interval [a, b]  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>number</code> |  |
-| b | <code>number</code> |  |
-| i | <code>number</code> | The interpolation value |
+| a | <code>number</code> | The minimum number |
+| b | <code>number</code> | The maximum number |
+| i | <code>number</code> | The interpolation value, should be in the interval [0, 1] |
 
 <a name="Math.unlerp"></a>
 
@@ -130,12 +134,13 @@ Do a linear interpolation between a and b
 Get the position of i between a and b
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - The position of i between a and b  
 
-| Param | Type |
-| --- | --- |
-| a | <code>number</code> | 
-| b | <code>number</code> | 
-| i | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | <code>number</code> | The minimum number |
+| b | <code>number</code> | The maximum number |
+| i | <code>number</code> | The interpolated value in the interval [a, b] |
 
 <a name="Math.blerp"></a>
 
@@ -143,6 +148,7 @@ Get the position of i between a and b
 Do a bilinear interpolation
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - A bilinear interpolated value  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -160,25 +166,26 @@ Re-map a number i from range a1->a2 to b1->b2
 
 **Kind**: static method of [<code>Math</code>](#Math)  
 
-| Param | Type |
-| --- | --- |
-| i | <code>number</code> | 
-| a1 | <code>number</code> | 
-| a2 | <code>number</code> | 
-| b1 | <code>number</code> | 
-| b2 | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| i | <code>number</code> | The number to re-map |
+| a1 | <code>number</code> |  |
+| a2 | <code>number</code> |  |
+| b1 | <code>number</code> |  |
+| b2 | <code>number</code> |  |
 
 <a name="Math.smoothstep"></a>
 
-### Math.smoothstep(a, b, i)
+### Math.smoothstep(a, b, i) ⇒ <code>number</code>
 Do a smooth interpolation between a and b
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - An interpolated value in the interval [a, b]  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>\*</code> |  |
-| b | <code>\*</code> |  |
+| a | <code>\*</code> | The minimum number |
+| b | <code>\*</code> | The maximum number |
 | i | <code>\*</code> | The interpolation value |
 
 <a name="Math.radians"></a>
@@ -187,6 +194,7 @@ Do a smooth interpolation between a and b
 Get an angle in radians
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - The angle in radians  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -198,6 +206,7 @@ Get an angle in radians
 Get an angle in degrees
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - The angle in degrees  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -209,6 +218,7 @@ Get an angle in degrees
 Get a random float in the interval [min, max)
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - A random float in the interval [min, max)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -221,6 +231,7 @@ Get a random float in the interval [min, max)
 Get a random integer in the interval [min, max]
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - A random integer in the interval [min, max]  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -233,6 +244,7 @@ Get a random integer in the interval [min, max]
 Get a normally-distributed random number
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - A normally-distributed random number  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -246,6 +258,7 @@ Get a normally-distributed random number
 Get a normally-distributed random integer in the interval [min, max]
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - A normally-distributed random integer  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -270,6 +283,7 @@ Return a weighted random integer
 Return an interpolated value from an array
 
 **Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - An interpolated value in the interval [min(a), max(a)]  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -285,10 +299,10 @@ Get the dot product of two vectors
 **Kind**: static method of [<code>Math</code>](#Math)  
 **Returns**: <code>number</code> - a ∙ b  
 
-| Param | Type |
-| --- | --- |
-| a | <code>Array.&lt;number&gt;</code> | 
-| b | <code>Array.&lt;number&gt;</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | <code>Array.&lt;number&gt;</code> | Vector a |
+| b | <code>Array.&lt;number&gt;</code> | Vector b |
 
 <a name="Array"></a>
 
@@ -310,10 +324,11 @@ Get the dot product of two vectors
 Return array[i] with positive and negative wrapping
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
+**Returns**: <code>\*</code> - An element from the array  
 
-| Param | Type |
-| --- | --- |
-| i | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| i | <code>number</code> | The positively/negatively wrapped array index |
 
 <a name="Array+chunk"></a>
 
@@ -321,6 +336,7 @@ Return array[i] with positive and negative wrapping
 Chop an array into chunks of size n
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
+**Returns**: <code>Array.&lt;Array.&lt;\*&gt;&gt;</code> - An array of array chunks  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -351,6 +367,7 @@ Return a new array with length n by calling function f(i) on each element
 Return an array containing numbers 0->(n - 1)
 
 **Kind**: static method of [<code>Array</code>](#Array)  
+**Returns**: <code>Array.&lt;number&gt;</code> - An array of integers 0->(n - 1)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -362,6 +379,7 @@ Return an array containing numbers 0->(n - 1)
 Create a new vector
 
 **Kind**: global function  
+**Returns**: [<code>vec</code>](#vec) - A new vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -400,6 +418,7 @@ let d = vec();      // (0, 0)
 Get the components of a vector as an array
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: <code>Array.&lt;number&gt;</code> - The vector components as an array  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -411,12 +430,14 @@ Get the components of a vector as an array
 Return a unit vector (1, 0)
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - A unit vector (1, 0)  
 <a name="vec.uy"></a>
 
 ### vec.uy() ⇒ [<code>vec</code>](#vec)
 Return a unit vector (0, 1)
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - A unit vector (0, 1)  
 <a name="vec.add"></a>
 
 ### vec.add(a, b) ⇒ [<code>vec</code>](#vec)
@@ -425,10 +446,10 @@ Add vectors
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a + b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.mul"></a>
 
@@ -438,10 +459,10 @@ Scale a vector
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a * b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | <code>number</code> | Scalar b |
 
 <a name="vec.sub"></a>
 
@@ -451,10 +472,10 @@ Subtract vectors
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a - b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.len"></a>
 
@@ -464,9 +485,9 @@ Get the length of a vector
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - |a|  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
 
 <a name="vec.manhattan"></a>
 
@@ -476,9 +497,9 @@ Get the length of a vector using taxicab geometry
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - |a|  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
 
 <a name="vec.nor"></a>
 
@@ -486,10 +507,11 @@ Get the length of a vector using taxicab geometry
 Normalise a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - ^a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | The vector to normalise |
 
 <a name="vec.dot"></a>
 
@@ -499,10 +521,10 @@ Get a dot product of vectors
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a ∙ b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.rot"></a>
 
@@ -510,10 +532,11 @@ Get a dot product of vectors
 Rotate a vector by r radians
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - A rotated vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>vec</code>](#vec) |  |
+| a | [<code>vec</code>](#vec) | The vector to rotate |
 | r | <code>number</code> | The angle to rotate by, measured in radians |
 
 <a name="vec.eq"></a>
@@ -522,12 +545,12 @@ Rotate a vector by r radians
 Check if two vectors are equal
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: <code>boolean</code> - True if the vectors are equal, false otherwise  
+**Returns**: <code>boolean</code> - True if vectors a and b are equal, false otherwise  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.rad"></a>
 
@@ -535,11 +558,11 @@ Check if two vectors are equal
 Get the angle of a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: <code>number</code> - The angle of the vector in radians  
+**Returns**: <code>number</code> - The angle of vector a in radians  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
 
 <a name="vec.cpy"></a>
 
@@ -547,11 +570,11 @@ Get the angle of a vector
 Copy a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - A copy of a  
+**Returns**: [<code>vec</code>](#vec) - A copy of vector a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | The vector to copy |
 
 <a name="vec.map"></a>
 
@@ -559,11 +582,11 @@ Copy a vector
 Call a function on each component of a vector and build a new vector from the results
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - The mapped vector  
+**Returns**: [<code>vec</code>](#vec) - Vector a mapped through f  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>vec</code>](#vec) |  |
+| a | [<code>vec</code>](#vec) | Vector a |
 | f | [<code>vectorMapCallback</code>](#vectorMapCallback) | The function to call on each component of the vector |
 
 <a name="vec.str"></a>
@@ -572,10 +595,11 @@ Call a function on each component of a vector and build a new vector from the re
 Convert a vector into a string
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: <code>string</code> - A string representation of the vector  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| a | [<code>vec</code>](#vec) |  |  |
+| a | [<code>vec</code>](#vec) |  | The vector to convert |
 | [s] | <code>string</code> | <code>&quot;&#x27;, &#x27;&quot;</code> | The separator string |
 
 <a name="mat"></a>
@@ -584,6 +608,7 @@ Convert a vector into a string
 Create a new matrix
 
 **Kind**: global function  
+**Returns**: [<code>mat</code>](#mat) - A new matrix  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -619,6 +644,7 @@ Create a new matrix
 Get an identity matrix of size n
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - An identity matrix  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -630,11 +656,11 @@ Get an identity matrix of size n
 Get an entry from a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>number</code> - The value at position (i, j) in the matrix  
+**Returns**: <code>number</code> - The value at position (i, j) in matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | i | <code>number</code> | The row offset |
 | j | <code>number</code> | The column offset |
 
@@ -647,10 +673,10 @@ Set an entry of a matrix
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | i | <code>number</code> | The row offset |
 | j | <code>number</code> | The column offset |
-| v | <code>number</code> | The value to set |
+| v | <code>number</code> | The value to set in matrix a |
 
 <a name="mat.row"></a>
 
@@ -658,11 +684,11 @@ Set an entry of a matrix
 Get a row from a matrix as an array
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>Array.&lt;number&gt;</code> - Row m from the matrix  
+**Returns**: <code>Array.&lt;number&gt;</code> - Row m from matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | m | <code>number</code> | The row offset |
 
 <a name="mat.col"></a>
@@ -671,11 +697,11 @@ Get a row from a matrix as an array
 Get a column from a matrix as an array
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>Array.&lt;number&gt;</code> - Column n from the matrix  
+**Returns**: <code>Array.&lt;number&gt;</code> - Column n from matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | n | <code>number</code> | The column offset |
 
 <a name="mat.add"></a>
@@ -686,10 +712,10 @@ Add matrices
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - a + b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.sub"></a>
 
@@ -699,10 +725,10 @@ Subtract matrices
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - a - b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.mul"></a>
 
@@ -712,10 +738,10 @@ Multiply matrices
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - ab  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.scale"></a>
 
@@ -725,10 +751,10 @@ Scale a matrix
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - a * b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | <code>number</code> | Scalar b |
 
 <a name="mat.trans"></a>
 
@@ -736,10 +762,11 @@ Scale a matrix
 Transpose a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - A transposed matrix  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to transpose |
 
 <a name="mat.minor"></a>
 
@@ -747,11 +774,11 @@ Transpose a matrix
 Get the minor of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: [<code>mat</code>](#mat) - The (i, j) minor of the matrix  
+**Returns**: [<code>mat</code>](#mat) - The (i, j) minor of matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | i | <code>number</code> | The row offset |
 | j | <code>number</code> | The column offset |
 
@@ -761,11 +788,11 @@ Get the minor of a matrix
 Get the determinant of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>number</code> - The matrix determinant  
+**Returns**: <code>number</code> - |a|  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
 
 <a name="mat.nor"></a>
 
@@ -773,10 +800,11 @@ Get the determinant of a matrix
 Normalise a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - ^a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to normalise |
 
 <a name="mat.adj"></a>
 
@@ -784,10 +812,11 @@ Normalise a matrix
 Get the adjugate of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - The adjugate of a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix from which to get the adjugate |
 
 <a name="mat.inv"></a>
 
@@ -795,10 +824,11 @@ Get the adjugate of a matrix
 Get the inverse of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - a^-1  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to invert |
 
 <a name="mat.eq"></a>
 
@@ -806,12 +836,12 @@ Get the inverse of a matrix
 Check if two matrices are equal
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>boolean</code> - True if the matrices are identical, false otherwise  
+**Returns**: <code>boolean</code> - True if matrices a and b are identical, false otherwise  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.cpy"></a>
 
@@ -819,11 +849,11 @@ Check if two matrices are equal
 Copy a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: [<code>mat</code>](#mat) - A copy of a  
+**Returns**: [<code>mat</code>](#mat) - A copy of matrix a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to copy |
 
 <a name="mat.map"></a>
 
@@ -831,10 +861,11 @@ Copy a matrix
 Call a function on each entry of a matrix and build a new matrix from the results
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - Matrix a mapped through f  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | f | [<code>matrixMapCallback</code>](#matrixMapCallback) | The function to call on each entry of the matrix |
 
 <a name="mat.str"></a>
@@ -843,10 +874,11 @@ Call a function on each entry of a matrix and build a new matrix from the result
 Convert a matrix into a string
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: <code>string</code> - A string representation of the matrix  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |  |
+| a | [<code>mat</code>](#mat) |  | The matrix to convert |
 | [ms] | <code>string</code> | <code>&quot;&#x27;, &#x27;&quot;</code> | The separator string for columns |
 | [ns] | <code>string</code> | <code>&quot;&#x27;\\n&#x27;&quot;</code> | The separator string for rows |
 
@@ -888,6 +920,7 @@ A 2d vector
 Get the components of a vector as an array
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: <code>Array.&lt;number&gt;</code> - The vector components as an array  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -899,12 +932,14 @@ Get the components of a vector as an array
 Return a unit vector (1, 0)
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - A unit vector (1, 0)  
 <a name="vec.uy"></a>
 
 ### vec.uy() ⇒ [<code>vec</code>](#vec)
 Return a unit vector (0, 1)
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - A unit vector (0, 1)  
 <a name="vec.add"></a>
 
 ### vec.add(a, b) ⇒ [<code>vec</code>](#vec)
@@ -913,10 +948,10 @@ Add vectors
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a + b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.mul"></a>
 
@@ -926,10 +961,10 @@ Scale a vector
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a * b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | <code>number</code> | Scalar b |
 
 <a name="vec.sub"></a>
 
@@ -939,10 +974,10 @@ Subtract vectors
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a - b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.len"></a>
 
@@ -952,9 +987,9 @@ Get the length of a vector
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - |a|  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
 
 <a name="vec.manhattan"></a>
 
@@ -964,9 +999,9 @@ Get the length of a vector using taxicab geometry
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - |a|  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
 
 <a name="vec.nor"></a>
 
@@ -974,10 +1009,11 @@ Get the length of a vector using taxicab geometry
 Normalise a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - ^a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | The vector to normalise |
 
 <a name="vec.dot"></a>
 
@@ -987,10 +1023,10 @@ Get a dot product of vectors
 **Kind**: static method of [<code>vec</code>](#vec)  
 **Returns**: [<code>vec</code>](#vec) - a ∙ b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.rot"></a>
 
@@ -998,10 +1034,11 @@ Get a dot product of vectors
 Rotate a vector by r radians
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: [<code>vec</code>](#vec) - A rotated vector  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>vec</code>](#vec) |  |
+| a | [<code>vec</code>](#vec) | The vector to rotate |
 | r | <code>number</code> | The angle to rotate by, measured in radians |
 
 <a name="vec.eq"></a>
@@ -1010,12 +1047,12 @@ Rotate a vector by r radians
 Check if two vectors are equal
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: <code>boolean</code> - True if the vectors are equal, false otherwise  
+**Returns**: <code>boolean</code> - True if vectors a and b are equal, false otherwise  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
-| b | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
+| b | [<code>vec</code>](#vec) | Vector b |
 
 <a name="vec.rad"></a>
 
@@ -1023,11 +1060,11 @@ Check if two vectors are equal
 Get the angle of a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: <code>number</code> - The angle of the vector in radians  
+**Returns**: <code>number</code> - The angle of vector a in radians  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | Vector a |
 
 <a name="vec.cpy"></a>
 
@@ -1035,11 +1072,11 @@ Get the angle of a vector
 Copy a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - A copy of a  
+**Returns**: [<code>vec</code>](#vec) - A copy of vector a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>vec</code>](#vec) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>vec</code>](#vec) | The vector to copy |
 
 <a name="vec.map"></a>
 
@@ -1047,11 +1084,11 @@ Copy a vector
 Call a function on each component of a vector and build a new vector from the results
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - The mapped vector  
+**Returns**: [<code>vec</code>](#vec) - Vector a mapped through f  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>vec</code>](#vec) |  |
+| a | [<code>vec</code>](#vec) | Vector a |
 | f | [<code>vectorMapCallback</code>](#vectorMapCallback) | The function to call on each component of the vector |
 
 <a name="vec.str"></a>
@@ -1060,10 +1097,11 @@ Call a function on each component of a vector and build a new vector from the re
 Convert a vector into a string
 
 **Kind**: static method of [<code>vec</code>](#vec)  
+**Returns**: <code>string</code> - A string representation of the vector  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| a | [<code>vec</code>](#vec) |  |  |
+| a | [<code>vec</code>](#vec) |  | The vector to convert |
 | [s] | <code>string</code> | <code>&quot;&#x27;, &#x27;&quot;</code> | The separator string |
 
 <a name="vectorMapCallback"></a>
@@ -1121,6 +1159,7 @@ A matrix
 Get an identity matrix of size n
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - An identity matrix  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1132,11 +1171,11 @@ Get an identity matrix of size n
 Get an entry from a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>number</code> - The value at position (i, j) in the matrix  
+**Returns**: <code>number</code> - The value at position (i, j) in matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | i | <code>number</code> | The row offset |
 | j | <code>number</code> | The column offset |
 
@@ -1149,10 +1188,10 @@ Set an entry of a matrix
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | i | <code>number</code> | The row offset |
 | j | <code>number</code> | The column offset |
-| v | <code>number</code> | The value to set |
+| v | <code>number</code> | The value to set in matrix a |
 
 <a name="mat.row"></a>
 
@@ -1160,11 +1199,11 @@ Set an entry of a matrix
 Get a row from a matrix as an array
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>Array.&lt;number&gt;</code> - Row m from the matrix  
+**Returns**: <code>Array.&lt;number&gt;</code> - Row m from matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | m | <code>number</code> | The row offset |
 
 <a name="mat.col"></a>
@@ -1173,11 +1212,11 @@ Get a row from a matrix as an array
 Get a column from a matrix as an array
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>Array.&lt;number&gt;</code> - Column n from the matrix  
+**Returns**: <code>Array.&lt;number&gt;</code> - Column n from matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | n | <code>number</code> | The column offset |
 
 <a name="mat.add"></a>
@@ -1188,10 +1227,10 @@ Add matrices
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - a + b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.sub"></a>
 
@@ -1201,10 +1240,10 @@ Subtract matrices
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - a - b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.mul"></a>
 
@@ -1214,10 +1253,10 @@ Multiply matrices
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - ab  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.scale"></a>
 
@@ -1227,10 +1266,10 @@ Scale a matrix
 **Kind**: static method of [<code>mat</code>](#mat)  
 **Returns**: [<code>mat</code>](#mat) - a * b  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | <code>number</code> | Scalar b |
 
 <a name="mat.trans"></a>
 
@@ -1238,10 +1277,11 @@ Scale a matrix
 Transpose a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - A transposed matrix  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to transpose |
 
 <a name="mat.minor"></a>
 
@@ -1249,11 +1289,11 @@ Transpose a matrix
 Get the minor of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: [<code>mat</code>](#mat) - The (i, j) minor of the matrix  
+**Returns**: [<code>mat</code>](#mat) - The (i, j) minor of matrix a  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | i | <code>number</code> | The row offset |
 | j | <code>number</code> | The column offset |
 
@@ -1263,11 +1303,11 @@ Get the minor of a matrix
 Get the determinant of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>number</code> - The matrix determinant  
+**Returns**: <code>number</code> - |a|  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
 
 <a name="mat.nor"></a>
 
@@ -1275,10 +1315,11 @@ Get the determinant of a matrix
 Normalise a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - ^a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to normalise |
 
 <a name="mat.adj"></a>
 
@@ -1286,10 +1327,11 @@ Normalise a matrix
 Get the adjugate of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - The adjugate of a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix from which to get the adjugate |
 
 <a name="mat.inv"></a>
 
@@ -1297,10 +1339,11 @@ Get the adjugate of a matrix
 Get the inverse of a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - a^-1  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to invert |
 
 <a name="mat.eq"></a>
 
@@ -1308,12 +1351,12 @@ Get the inverse of a matrix
 Check if two matrices are equal
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: <code>boolean</code> - True if the matrices are identical, false otherwise  
+**Returns**: <code>boolean</code> - True if matrices a and b are identical, false otherwise  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
-| b | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | Matrix a |
+| b | [<code>mat</code>](#mat) | Matrix b |
 
 <a name="mat.cpy"></a>
 
@@ -1321,11 +1364,11 @@ Check if two matrices are equal
 Copy a matrix
 
 **Kind**: static method of [<code>mat</code>](#mat)  
-**Returns**: [<code>mat</code>](#mat) - A copy of a  
+**Returns**: [<code>mat</code>](#mat) - A copy of matrix a  
 
-| Param | Type |
-| --- | --- |
-| a | [<code>mat</code>](#mat) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| a | [<code>mat</code>](#mat) | The matrix to copy |
 
 <a name="mat.map"></a>
 
@@ -1333,10 +1376,11 @@ Copy a matrix
 Call a function on each entry of a matrix and build a new matrix from the results
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: [<code>mat</code>](#mat) - Matrix a mapped through f  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |
+| a | [<code>mat</code>](#mat) | Matrix a |
 | f | [<code>matrixMapCallback</code>](#matrixMapCallback) | The function to call on each entry of the matrix |
 
 <a name="mat.str"></a>
@@ -1345,10 +1389,11 @@ Call a function on each entry of a matrix and build a new matrix from the result
 Convert a matrix into a string
 
 **Kind**: static method of [<code>mat</code>](#mat)  
+**Returns**: <code>string</code> - A string representation of the matrix  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| a | [<code>mat</code>](#mat) |  |  |
+| a | [<code>mat</code>](#mat) |  | The matrix to convert |
 | [ms] | <code>string</code> | <code>&quot;&#x27;, &#x27;&quot;</code> | The separator string for columns |
 | [ns] | <code>string</code> | <code>&quot;&#x27;\\n&#x27;&quot;</code> | The separator string for rows |
 
@@ -1372,12 +1417,13 @@ A function to call on each entry of a matrix
 An interpolation function
 
 **Kind**: global typedef  
+**Returns**: <code>number</code> - The interpolated value in the interval [a, b]  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>number</code> |  |
-| b | <code>number</code> |  |
-| i | <code>number</code> | The interpolation value |
+| a | <code>number</code> | The minimum number |
+| b | <code>number</code> | The maximum number |
+| i | <code>number</code> | The interpolation value, should be in the interval [0, 1] |
 
 <a name="timesCallback"></a>
 
@@ -1385,6 +1431,7 @@ An interpolation function
 A function for generating array values
 
 **Kind**: global typedef  
+**Returns**: <code>\*</code> - The array value  
 
 | Param | Type | Description |
 | --- | --- | --- |
