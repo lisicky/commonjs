@@ -522,7 +522,7 @@ Math.cltRandom = (mu = 0.5, sigma = 0.5, samples = 2) => {
  * @param {number} max Inclusive max
  * @return {number} A normally-distributed random integer
  */
-Math.cltRandomInt = (min, max) => min + Math.cltRandom(0.5, 0.5, 2) * (max - min);
+Math.cltRandomInt = (min, max) => Math.floor(min + Math.cltRandom(0.5, 0.5, 2) * (max + 1 - min));
 
 /**
  * Return a weighted random integer
