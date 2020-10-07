@@ -87,7 +87,9 @@ QUnit.test('Vector rotation', assert => {
 QUnit.test('Vector equality', assert => {
   const a = vec(2, 2);
   const b = vec(2, 2);
+  const c = vec(2, 3);
   assert.equal(vec.eq(a, b), true);
+  assert.equal(vec.eq(b, c), false);
 });
 
 QUnit.test('Vector angle in radians', assert => {

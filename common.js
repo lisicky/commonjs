@@ -88,7 +88,7 @@ vec.manhattan = a => Math.abs(a.x) + Math.abs(a.y);
 /**
  * Normalise a vector
  * @param {vec} a The vector to normalise
- * @return {vec} A normalised vector
+ * @return {vec} ^a
  */
 vec.nor = a => {
   let len = vec.len(a);
@@ -296,7 +296,7 @@ mat.minor = (a, i, j) => {
 /**
  * Get the determinant of a matrix
  * @param {mat} a Matrix a
- * @return {number} The determinant of matrix a
+ * @return {number} |a|
  */
 mat.det = a => {
   if (a.m !== a.n) { return false; }
@@ -317,7 +317,7 @@ mat.det = a => {
 /**
  * Normalise a matrix
  * @param {mat} a The matrix to normalise
- * @return {mat} A normalised matrix
+ * @return {mat} ^a
  */
 mat.nor = a => {
   if (a.m !== a.n) { return false; }
@@ -328,7 +328,7 @@ mat.nor = a => {
 /**
  * Get the adjugate of a matrix
  * @param {mat} a The matrix from which to get the adjugate
- * @return {mat} An adjugate matrix
+ * @return {mat} The adjugate of a
  */
 mat.adj = a => {
   const minors = mat(a.m, a.n);
@@ -344,7 +344,7 @@ mat.adj = a => {
 /**
  * Get the inverse of a matrix
  * @param {mat} a The matrix to invert
- * @return {mat} An inverse matrix
+ * @return {mat} a^-1
  */
 mat.inv = a => {
   if (a.m !== a.n) { return false; }
@@ -392,7 +392,7 @@ mat.map = (a, f) => mat(a.m, a.n, a.entries.map(f));
  * @param {string} [ns='\n'] The separator string for rows
  * @return {string} A string representation of the matrix
  */
-mat.str = (a, ms = ' ', ns = '\n') => a.entries.chunk(a.n).map(r => r.join(ms)).join(ns);
+mat.str = (a, ms = ', ', ns = '\n') => a.entries.chunk(a.n).map(r => r.join(ms)).join(ns);
 
 /** @class Math */
 
