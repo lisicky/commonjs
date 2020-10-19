@@ -46,6 +46,12 @@ Browser:
 ## Typedefs
 
 <dl>
+<dt><a href="#interpolationCallback">interpolationCallback</a> ⇒ <code>number</code></dt>
+<dd><p>An interpolation function</p>
+</dd>
+<dt><a href="#timesCallback">timesCallback</a> ⇒ <code>*</code></dt>
+<dd><p>A function for generating array values</p>
+</dd>
 <dt><a href="#vec">vec</a> : <code>Object</code></dt>
 <dd><p>A 2d vector</p>
 </dd>
@@ -57,12 +63,6 @@ Browser:
 </dd>
 <dt><a href="#matrixMapCallback">matrixMapCallback</a> ⇒ <code>number</code></dt>
 <dd><p>A function to call on each entry of a matrix</p>
-</dd>
-<dt><a href="#interpolationCallback">interpolationCallback</a> ⇒ <code>number</code></dt>
-<dd><p>An interpolation function</p>
-</dd>
-<dt><a href="#timesCallback">timesCallback</a> ⇒ <code>*</code></dt>
-<dd><p>A function for generating array values</p>
 </dd>
 </dl>
 
@@ -417,10 +417,10 @@ let d = vec();      // (0, 0)
     * [.add(a, b)](#vec.add) ⇒ [<code>vec</code>](#vec)
     * [.mul(a, b)](#vec.mul) ⇒ [<code>vec</code>](#vec)
     * [.sub(a, b)](#vec.sub) ⇒ [<code>vec</code>](#vec)
-    * [.len(a)](#vec.len) ⇒ [<code>vec</code>](#vec)
-    * [.manhattan(a)](#vec.manhattan) ⇒ [<code>vec</code>](#vec)
+    * [.len(a)](#vec.len) ⇒ <code>number</code>
+    * [.manhattan(a)](#vec.manhattan) ⇒ <code>number</code>
     * [.nor(a)](#vec.nor) ⇒ [<code>vec</code>](#vec)
-    * [.dot(a, b)](#vec.dot) ⇒ [<code>vec</code>](#vec)
+    * [.dot(a, b)](#vec.dot) ⇒ <code>number</code>
     * [.rot(a, r)](#vec.rot) ⇒ [<code>vec</code>](#vec)
     * [.eq(a, b)](#vec.eq) ⇒ <code>boolean</code>
     * [.rad(a)](#vec.rad) ⇒ <code>number</code>
@@ -495,11 +495,11 @@ Subtract vectors
 
 <a name="vec.len"></a>
 
-### vec.len(a) ⇒ [<code>vec</code>](#vec)
+### vec.len(a) ⇒ <code>number</code>
 Get the length of a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - |a|  
+**Returns**: <code>number</code> - |a|  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -507,11 +507,11 @@ Get the length of a vector
 
 <a name="vec.manhattan"></a>
 
-### vec.manhattan(a) ⇒ [<code>vec</code>](#vec)
+### vec.manhattan(a) ⇒ <code>number</code>
 Get the length of a vector using taxicab geometry
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - |a|  
+**Returns**: <code>number</code> - |a|  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -531,11 +531,11 @@ Normalise a vector
 
 <a name="vec.dot"></a>
 
-### vec.dot(a, b) ⇒ [<code>vec</code>](#vec)
+### vec.dot(a, b) ⇒ <code>number</code>
 Get a dot product of vectors
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - a ∙ b  
+**Returns**: <code>number</code> - a ∙ b  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -898,6 +898,32 @@ Convert a matrix into a string
 | [ms] | <code>string</code> | <code>&quot;&#x27;, &#x27;&quot;</code> | The separator string for columns |
 | [ns] | <code>string</code> | <code>&quot;&#x27;\\n&#x27;&quot;</code> | The separator string for rows |
 
+<a name="interpolationCallback"></a>
+
+## interpolationCallback ⇒ <code>number</code>
+An interpolation function
+
+**Kind**: global typedef  
+**Returns**: <code>number</code> - The interpolated value in the interval [a, b]  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| a | <code>number</code> | The minimum number |
+| b | <code>number</code> | The maximum number |
+| i | <code>number</code> | The interpolation value, should be in the interval [0, 1] |
+
+<a name="timesCallback"></a>
+
+## timesCallback ⇒ <code>\*</code>
+A function for generating array values
+
+**Kind**: global typedef  
+**Returns**: <code>\*</code> - The array value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| i | <code>number</code> | The array index |
+
 <a name="vec"></a>
 
 ## vec : <code>Object</code>
@@ -919,10 +945,10 @@ A 2d vector
     * [.add(a, b)](#vec.add) ⇒ [<code>vec</code>](#vec)
     * [.mul(a, b)](#vec.mul) ⇒ [<code>vec</code>](#vec)
     * [.sub(a, b)](#vec.sub) ⇒ [<code>vec</code>](#vec)
-    * [.len(a)](#vec.len) ⇒ [<code>vec</code>](#vec)
-    * [.manhattan(a)](#vec.manhattan) ⇒ [<code>vec</code>](#vec)
+    * [.len(a)](#vec.len) ⇒ <code>number</code>
+    * [.manhattan(a)](#vec.manhattan) ⇒ <code>number</code>
     * [.nor(a)](#vec.nor) ⇒ [<code>vec</code>](#vec)
-    * [.dot(a, b)](#vec.dot) ⇒ [<code>vec</code>](#vec)
+    * [.dot(a, b)](#vec.dot) ⇒ <code>number</code>
     * [.rot(a, r)](#vec.rot) ⇒ [<code>vec</code>](#vec)
     * [.eq(a, b)](#vec.eq) ⇒ <code>boolean</code>
     * [.rad(a)](#vec.rad) ⇒ <code>number</code>
@@ -997,11 +1023,11 @@ Subtract vectors
 
 <a name="vec.len"></a>
 
-### vec.len(a) ⇒ [<code>vec</code>](#vec)
+### vec.len(a) ⇒ <code>number</code>
 Get the length of a vector
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - |a|  
+**Returns**: <code>number</code> - |a|  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1009,11 +1035,11 @@ Get the length of a vector
 
 <a name="vec.manhattan"></a>
 
-### vec.manhattan(a) ⇒ [<code>vec</code>](#vec)
+### vec.manhattan(a) ⇒ <code>number</code>
 Get the length of a vector using taxicab geometry
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - |a|  
+**Returns**: <code>number</code> - |a|  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1033,11 +1059,11 @@ Normalise a vector
 
 <a name="vec.dot"></a>
 
-### vec.dot(a, b) ⇒ [<code>vec</code>](#vec)
+### vec.dot(a, b) ⇒ <code>number</code>
 Get a dot product of vectors
 
 **Kind**: static method of [<code>vec</code>](#vec)  
-**Returns**: [<code>vec</code>](#vec) - a ∙ b  
+**Returns**: <code>number</code> - a ∙ b  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1426,30 +1452,4 @@ A function to call on each entry of a matrix
 | value | <code>number</code> | The entry value |
 | index | <code>number</code> | The entry index |
 | entries | <code>Array.&lt;number&gt;</code> | The array of matrix entries |
-
-<a name="interpolationCallback"></a>
-
-## interpolationCallback ⇒ <code>number</code>
-An interpolation function
-
-**Kind**: global typedef  
-**Returns**: <code>number</code> - The interpolated value in the interval [a, b]  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| a | <code>number</code> | The minimum number |
-| b | <code>number</code> | The maximum number |
-| i | <code>number</code> | The interpolation value, should be in the interval [0, 1] |
-
-<a name="timesCallback"></a>
-
-## timesCallback ⇒ <code>\*</code>
-A function for generating array values
-
-**Kind**: global typedef  
-**Returns**: <code>\*</code> - The array value  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| i | <code>number</code> | The array index |
 
