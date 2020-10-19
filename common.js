@@ -192,7 +192,7 @@ Math.dot = (a, b) => a.reduce((n, v, i) => n + v * b[i], 0);
  * @param {number} n The size of the array
  * @return {Array<*>}
  */
-Array.times = (f, n) => Array(n).fill().map((_, i) => f(i));
+Array.times = (f, n) => Array(n).fill(0).map((_, i) => f(i));
 
 /**
  * Return an array containing numbers 0->(n - 1)
