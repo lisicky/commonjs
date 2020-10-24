@@ -17,8 +17,8 @@ Math.floatEquals = (a, b, p = Number.EPSILON) => Math.abs(a - b) < p;
 /**
  * Clamp a number between min and max
  * @param {number} a The number to clamp
- * @param {number} min The minimum value
- * @param {number} max The maximum value
+ * @param {number} [min=0] The minimum value
+ * @param {number} [max=1] The maximum value
  * @return {number} A clamped number
  */
 Math.clamp = (a, min = 0, max = 1) => a < min ? min : (a > max ? max : a);
@@ -73,9 +73,9 @@ Math.remap = (i, a1, a2, b1, b2) => b1 + (i - a1) * (b2 - b1) / (a2 - a1);
 
 /**
  * Do a smooth interpolation between a and b
- * @param {*} a The minimum number
- * @param {*} b The maximum number
- * @param {*} i The interpolation value
+ * @param {number} a The minimum number
+ * @param {number} b The maximum number
+ * @param {number} i The interpolation value
  * @return {number} An interpolated value in the interval [a, b]
  */
 Math.smoothstep = (a, b, i) => Math.lerp(a, b, 3 * Math.pow(i, 2) - 2 * Math.pow(i, 3));
@@ -112,9 +112,9 @@ Math.randomIntBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)
 
 /**
  * Get a normally-distributed random number
- * @param {number} mu The mean value
- * @param {number} sigma The standard deviation
- * @param {number} samples The number of samples
+ * @param {number} [mu=0.5] The mean value
+ * @param {number} [sigma=0.5] The standard deviation
+ * @param {number} [samples=2] The number of samples
  * @return {number} A normally-distributed random number
  */
 Math.cltRandom = (mu = 0.5, sigma = 0.5, samples = 2) => {
@@ -411,9 +411,9 @@ vec.str = (a, s = ', ') => `${a.x}${s}${a.y}`;
 
 /**
  * Create a new matrix
- * @param {number} m The number of rows
- * @param {number} n The number of columns
- * @param {Array<number>} entries Matrix values in reading order
+ * @param {number} [m=4] The number of rows
+ * @param {number} [n=4] The number of columns
+ * @param {Array<number>} [entries=[]] Matrix values in reading order
  * @return {mat} A new matrix
  */
 const mat = (m = 4, n = 4, entries = []) => ({

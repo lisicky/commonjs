@@ -38,7 +38,7 @@ Browser:
 <dt><a href="#vec">vec([x], [y])</a> ⇒ <code><a href="#vec">vec</a></code></dt>
 <dd><p>Create a new vector</p>
 </dd>
-<dt><a href="#mat">mat(m, n, entries)</a> ⇒ <code><a href="#mat">mat</a></code></dt>
+<dt><a href="#mat">mat([m], [n], [entries])</a> ⇒ <code><a href="#mat">mat</a></code></dt>
 <dd><p>Create a new matrix</p>
 </dd>
 </dl>
@@ -73,7 +73,7 @@ Browser:
 
 * [Math](#Math)
     * [.floatEquals(a, b, [p])](#Math.floatEquals) ⇒ <code>boolean</code>
-    * [.clamp(a, min, max)](#Math.clamp) ⇒ <code>number</code>
+    * [.clamp(a, [min], [max])](#Math.clamp) ⇒ <code>number</code>
     * [.frac(a)](#Math.frac) ⇒ <code>number</code>
     * [.lerp(a, b, i)](#Math.lerp) ⇒ <code>number</code>
     * [.unlerp(a, b, i)](#Math.unlerp) ⇒ <code>number</code>
@@ -84,7 +84,7 @@ Browser:
     * [.degrees(radians)](#Math.degrees) ⇒ <code>number</code>
     * [.randomBetween(min, max)](#Math.randomBetween) ⇒ <code>number</code>
     * [.randomIntBetween(min, max)](#Math.randomIntBetween) ⇒ <code>number</code>
-    * [.cltRandom(mu, sigma, samples)](#Math.cltRandom) ⇒ <code>number</code>
+    * [.cltRandom([mu], [sigma], [samples])](#Math.cltRandom) ⇒ <code>number</code>
     * [.cltRandomInt(min, max)](#Math.cltRandomInt) ⇒ <code>number</code>
     * [.weightedRandom(w)](#Math.weightedRandom) ⇒ <code>number</code>
     * [.lerpArray(a, i, [f])](#Math.lerpArray) ⇒ <code>number</code>
@@ -106,17 +106,17 @@ Check if two numbers are approximately equal
 
 <a name="Math.clamp"></a>
 
-### Math.clamp(a, min, max) ⇒ <code>number</code>
+### Math.clamp(a, [min], [max]) ⇒ <code>number</code>
 Clamp a number between min and max
 
 **Kind**: static method of [<code>Math</code>](#Math)  
 **Returns**: <code>number</code> - A clamped number  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| a | <code>number</code> | The number to clamp |
-| min | <code>number</code> | The minimum value |
-| max | <code>number</code> | The maximum value |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| a | <code>number</code> |  | The number to clamp |
+| [min] | <code>number</code> | <code>0</code> | The minimum value |
+| [max] | <code>number</code> | <code>1</code> | The maximum value |
 
 <a name="Math.frac"></a>
 
@@ -200,9 +200,9 @@ Do a smooth interpolation between a and b
 
 | Param | Type | Description |
 | --- | --- | --- |
-| a | <code>\*</code> | The minimum number |
-| b | <code>\*</code> | The maximum number |
-| i | <code>\*</code> | The interpolation value |
+| a | <code>number</code> | The minimum number |
+| b | <code>number</code> | The maximum number |
+| i | <code>number</code> | The interpolation value |
 
 <a name="Math.radians"></a>
 
@@ -256,17 +256,17 @@ Get a random integer in the interval [min, max]
 
 <a name="Math.cltRandom"></a>
 
-### Math.cltRandom(mu, sigma, samples) ⇒ <code>number</code>
+### Math.cltRandom([mu], [sigma], [samples]) ⇒ <code>number</code>
 Get a normally-distributed random number
 
 **Kind**: static method of [<code>Math</code>](#Math)  
 **Returns**: <code>number</code> - A normally-distributed random number  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| mu | <code>number</code> | The mean value |
-| sigma | <code>number</code> | The standard deviation |
-| samples | <code>number</code> | The number of samples |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [mu] | <code>number</code> | <code>0.5</code> | The mean value |
+| [sigma] | <code>number</code> | <code>0.5</code> | The standard deviation |
+| [samples] | <code>number</code> | <code>2</code> | The number of samples |
 
 <a name="Math.cltRandomInt"></a>
 
@@ -620,7 +620,7 @@ Convert a vector into a string
 
 <a name="mat"></a>
 
-## mat(m, n, entries) ⇒ [<code>mat</code>](#mat)
+## mat([m], [n], [entries]) ⇒ [<code>mat</code>](#mat)
 Create a new matrix
 
 **Kind**: global function  
@@ -628,12 +628,12 @@ Create a new matrix
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| m | <code>number</code> | <code>4</code> | The number of rows |
-| n | <code>number</code> | <code>4</code> | The number of columns |
-| entries | <code>Array.&lt;number&gt;</code> |  | Matrix values in reading order |
+| [m] | <code>number</code> | <code>4</code> | The number of rows |
+| [n] | <code>number</code> | <code>4</code> | The number of columns |
+| [entries] | <code>Array.&lt;number&gt;</code> | <code>[]</code> | Matrix values in reading order |
 
 
-* [mat(m, n, entries)](#mat) ⇒ [<code>mat</code>](#mat)
+* [mat([m], [n], [entries])](#mat) ⇒ [<code>mat</code>](#mat)
     * [.identity(n)](#mat.identity) ⇒ [<code>mat</code>](#mat)
     * [.get(a, i, j)](#mat.get) ⇒ <code>number</code>
     * [.set(a, i, j, v)](#mat.set)
