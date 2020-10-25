@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A collection of useful functions",
   "main": "common.js",
+  "types": "common.d.ts",
   "directories": {
     "test": "test"
   },
