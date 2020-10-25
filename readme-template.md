@@ -7,13 +7,19 @@ A small library of useful functions
 Node:
 
 ```javascript
-const { vec, mat } = require('./common.js');
+const { vec, mat } = require('@basementuniverse/commonjs');
 ```
 
 Browser:
 
 ```html
 <script src="common.js"></script>
+```
+
+Typescript:
+
+```typescript
+import { vec, mat } from '@basementuniverse/commonjs';
 ```
 
 ## Contents
