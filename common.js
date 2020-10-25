@@ -1,6 +1,7 @@
 /**
  * @overview A library of useful functions
  * @author Gordon Larrigan
+ * @version 1.2.4
  */
 
 /** @class Math */
