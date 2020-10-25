@@ -1,6 +1,6 @@
 {
   "name": "@basementuniverse/commonjs",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "A collection of useful functions",
   "main": "common.js",
   "types": "common.d.ts",
@@ -10,7 +10,8 @@
   "scripts": {
     "test": "qunit",
     "build": "gulp",
-    "build-docs": "node node_modules/jsdoc-to-markdown/bin/cli.js common.js --template readme-template.md > README.md"
+    "build-docs": "node node_modules/jsdoc-to-markdown/bin/cli.js common.js --template readme-template.md > README.md",
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
