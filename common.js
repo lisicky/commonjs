@@ -1,7 +1,7 @@
 /**
  * @overview A library of useful functions
  * @author Gordon Larrigan
- * @version 1.2.6
+ * @version 1.2.7
  */
 
 /** @class Math */
@@ -62,7 +62,7 @@ Math.unlerp = (a, b, i) => (i - a) / (b - a);
 Math.blerp = (c00, c10, c01, c11, ix, iy) => Math.lerp(Math.lerp(c00, c10, ix), Math.lerp(c01, c11, ix), iy);
 
 /**
- * Re-map a number i from range a1->a2 to b1->b2
+ * Re-map a number i from range a1...a2 to b1...b2
  * @param {number} i The number to re-map
  * @param {number} a1
  * @param {number} a2
@@ -177,6 +177,35 @@ Math.lerpArray = (a, i, f = Math.lerp) => {
  * @return {number} a ∙ b
  */
 Math.dot = (a, b) => a.reduce((n, v, i) => n + v * b[i], 0);
+
+/**
+ * Get the factorial of a number
+ * @param {number} a
+ * @return {number} a!
+ */
+Math.factorial = a => {
+  let result = 1;
+  for (let i = 2; i <= a; i++) {
+    result *= i;
+  }
+  return result;
+};
+
+/**
+ * Get the number of permutations of r elements from a set of n elements
+ * @param {number} n
+ * @param {number} r
+ * @return {number} nPr
+ */
+Math.permutation = (n, r) => Math.factorial(n) / Math.factorial(n - r);
+
+/**
+ * Get the number of combinations of r elements from a set of n elements
+ * @param {number} n
+ * @param {number} r
+ * @return {number} nCr
+ */
+Math.combination = (n, r) => Math.factorial(n) / (Math.factorial(r) * Math.factorial(n - r));
 
 /** @class Array */
 

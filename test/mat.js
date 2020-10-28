@@ -199,6 +199,10 @@ QUnit.test('Matrix minor', assert => {
 QUnit.test('Matrix determinant', assert => {
   const a = mat(3, 3, [6, 1, 1, 4, -2, 5, 2, 8, 7]);
   assert.equal(mat.det(a), -306);
+
+  // Determinant of a non-square matrix
+  const b = mat(2, 3, [1, 2, 3, 4, 5, 6]);
+  assert.equal(mat.det(b), false);
 });
 
 QUnit.test('Normalised matrix', assert => {
@@ -212,6 +216,10 @@ QUnit.test('Normalised matrix', assert => {
       -612, -2448, -2142
     ]
   });
+
+  // Normalise a non-square matrix
+  const b = mat(2, 3, [1, 2, 3, 4, 5, 6]);
+  assert.equal(mat.nor(b), false);
 });
 
 QUnit.test('Matrix adjugate', assert => {
@@ -232,6 +240,14 @@ QUnit.test('Matrix inverse', assert => {
   for (let i = 0; i < expectedEntries.length; i++) {
     assert.equal(Math.floatEquals(aInverse.entries[i], expectedEntries[i]), true);
   }
+
+  // Invert a non-square matrix
+  const b = mat(2, 3, [1, 2, 3, 4, 5, 6]);
+  assert.equal(mat.inv(b), false);
+
+  // Invert a singular/degenerate matrix
+  const c = mat(2, 2, [3, 4, 6, 8]);
+  assert.equal(mat.inv(c), false);
 });
 
 QUnit.test('Matrix equality', assert => {

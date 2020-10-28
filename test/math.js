@@ -2,7 +2,7 @@ require('../common.js');
 
 QUnit.module('Math tests');
 
-QUnit.test('Appromixate value equality', assert => {
+QUnit.test('Approximate value equality', assert => {
   assert.equal(Math.floatEquals(1 / 3, 0.3333333333333333), true);
 });
 
@@ -100,4 +100,23 @@ QUnit.test('Dot product of a vector', assert => {
   const a = [2, 3, 4];
   const b = [5, 6, 7];
   assert.equal(Math.dot(a, b), 56);
+});
+
+QUnit.test('Factorial of a number', assert => {
+  const factorials = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800];
+  for (let i = 0; i < factorials.length; i++) {
+    assert.equal(Math.factorial(i), factorials[i]);
+  }
+});
+
+QUnit.test('Combinations', assert => {
+  assert.equal(Math.combination(3, 1), 3);
+  assert.equal(Math.combination(3, 3), 1);
+  assert.equal(Math.combination(10, 3), 120);
+});
+
+QUnit.test('Permutations', assert => {
+  assert.equal(Math.permutation(3, 1), 3);
+  assert.equal(Math.permutation(3, 3), 6);
+  assert.equal(Math.permutation(10, 3), 720);
 });

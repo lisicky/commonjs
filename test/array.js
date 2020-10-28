@@ -44,6 +44,6 @@ QUnit.test('Chop an array into chunks', assert => {
 });
 
 QUnit.test('Shuffle an array', assert => {
-  const a = Array.range(10).shuffle();
+  const a = Array.range(100).shuffle();
   assert.notEqual(a[0], 0);
 });

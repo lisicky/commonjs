@@ -79,7 +79,7 @@ declare global {
     blerp(c00: number, c10: number, c01: number, c11: number, ix: number, iy: number): number,
 
     /**
-     * Re-map a number i from range a1->a2 to b1->b2
+     * Re-map a number i from range a1...a2 to b1...b2
      * @param {number} i The number to re-map
      * @param {number} a1
      * @param {number} a2
@@ -167,7 +167,30 @@ declare global {
      * @param {Array<number>} b Vector b
      * @return {number} a ∙ b
      */
-    dot(a: Array<number>, b: Array<number>): number
+    dot(a: Array<number>, b: Array<number>): number,
+
+    /**
+     * Get the factorial of a number
+     * @param {number} a
+     * @return {number} a!
+     */
+    factorial(a: number): number,
+
+    /**
+     * Get the number of permutations of r elements from a set of n elements
+     * @param {number} n
+     * @param {number} r
+     * @return {number} nPr
+     */
+    permutation(n: number, r: number): number,
+
+    /**
+     * Get the number of combinations of r elements from a set of n elements
+     * @param {number} n
+     * @param {number} r
+     * @return {number} nCr
+     */
+    combination(n: number, r: number): number
   }
 
   // Array constructor functions

@@ -95,6 +95,9 @@ import { vec, mat } from '@basementuniverse/commonjs';
     * [.weightedRandom(w)](#Math.weightedRandom) ⇒ <code>number</code>
     * [.lerpArray(a, i, [f])](#Math.lerpArray) ⇒ <code>number</code>
     * [.dot(a, b)](#Math.dot) ⇒ <code>number</code>
+    * [.factorial(a)](#Math.factorial) ⇒ <code>number</code>
+    * [.permutation(n, r)](#Math.permutation) ⇒ <code>number</code>
+    * [.combination(n, r)](#Math.combination) ⇒ <code>number</code>
 
 <a name="Math.floatEquals"></a>
 
@@ -184,7 +187,7 @@ Do a bilinear interpolation
 <a name="Math.remap"></a>
 
 ### Math.remap(i, a1, a2, b1, b2) ⇒ <code>number</code>
-Re-map a number i from range a1->a2 to b1->b2
+Re-map a number i from range a1...a2 to b1...b2
 
 **Kind**: static method of [<code>Math</code>](#Math)  
 
@@ -325,6 +328,44 @@ Get the dot product of two vectors
 | --- | --- | --- |
 | a | <code>Array.&lt;number&gt;</code> | Vector a |
 | b | <code>Array.&lt;number&gt;</code> | Vector b |
+
+<a name="Math.factorial"></a>
+
+### Math.factorial(a) ⇒ <code>number</code>
+Get the factorial of a number
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - a!  
+
+| Param | Type |
+| --- | --- |
+| a | <code>number</code> | 
+
+<a name="Math.permutation"></a>
+
+### Math.permutation(n, r) ⇒ <code>number</code>
+Get the number of permutations of r elements from a set of n elements
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - nPr  
+
+| Param | Type |
+| --- | --- |
+| n | <code>number</code> | 
+| r | <code>number</code> | 
+
+<a name="Math.combination"></a>
+
+### Math.combination(n, r) ⇒ <code>number</code>
+Get the number of combinations of r elements from a set of n elements
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+**Returns**: <code>number</code> - nCr  
+
+| Param | Type |
+| --- | --- |
+| n | <code>number</code> | 
+| r | <code>number</code> | 
 
 <a name="Array"></a>
 
