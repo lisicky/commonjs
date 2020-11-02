@@ -385,7 +385,7 @@ declare const vec: {
    * @param {string} [s=', '] The separator string
    * @return {string} A string representation of the vector
    */
-  str(a: vec, s:string): string,
+  str(a: vec, s?:string): string,
 }
 
 /**
