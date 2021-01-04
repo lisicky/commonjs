@@ -1,7 +1,7 @@
 /**
  * @overview A library of useful functions
  * @author Gordon Larrigan
- * @version 1.2.8
+ * @version 1.2.9
  */
 
 /** @class Math */
@@ -230,6 +230,14 @@ Array.times = (f, n) => Array(n).fill(0).map((_, i) => f(i));
  * @return {Array<number>} An array of integers 0->(n - 1)
  */
 Array.range = n => Array.times(i => i, n);
+
+/**
+ * Zip 2 arrays together, i.e. ([1, 2, 3], [a, b, c]) => [[1, a], [2, b], [3, c]]
+ * @param {Array<*>} a
+ * @param {Array<*>} b
+ * @return {Array<Array<*>>}
+ */
+Array.zip = (a, b) => a.map((k, i) => [k, b[i]]);
 
 /**
  * Return array[i] with positive and negative wrapping

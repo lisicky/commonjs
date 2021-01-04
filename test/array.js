@@ -10,6 +10,14 @@ QUnit.test('Create an array of integers', assert => {
   assert.deepEqual(Array.range(3), [0, 1, 2]);
 });
 
+QUnit.test('Zip arrays together', assert => {
+  assert.deepEqual(Array.zip(['a', 'b', 'c'], [1, 2, 3]), [
+    ['a', 1],
+    ['b', 2],
+    ['c', 3]
+  ]);
+});
+
 QUnit.test('Array value at wrapped index', assert => {
   const a = [1, 2, 3];
   assert.equal(a.at(0), 1);

@@ -208,7 +208,15 @@ declare global {
      * @param {number} n The size of the array
      * @return {Array<number>} An array of integers 0->(n - 1)
      */
-    range(n: number): Array<number>
+    range(n: number): Array<number>,
+
+    /**
+     * Zip 2 arrays together, i.e. ([1, 2, 3], [a, b, c]) => [[1, a], [2, b], [3, c]]
+     * @param {Array<*>} a
+     * @param {Array<*>} b
+     * @return {Array<*>}
+     */
+    zip(a: Array<any>, b: Array<any>): Array<Array<*>>
   }
 
   // Array instance functions

@@ -380,6 +380,7 @@ Get the number of combinations of r elements from a set of n elements
     * _static_
         * [.times(f, n)](#Array.times) ⇒ <code>Array.&lt;\*&gt;</code>
         * [.range(n)](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
+        * [.zip(a, b)](#Array.zip) ⇒ <code>Array.&lt;Array.&lt;\*&gt;&gt;</code>
 
 <a name="Array+at"></a>
 
@@ -435,6 +436,18 @@ Return an array containing numbers 0->(n - 1)
 | Param | Type | Description |
 | --- | --- | --- |
 | n | <code>number</code> | The size of the array |
+
+<a name="Array.zip"></a>
+
+### Array.zip(a, b) ⇒ <code>Array.&lt;Array.&lt;\*&gt;&gt;</code>
+Zip 2 arrays together, i.e. ([1, 2, 3], [a, b, c]) => [[1, a], [2, b], [3, c]]
+
+**Kind**: static method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| a | <code>Array.&lt;\*&gt;</code> | 
+| b | <code>Array.&lt;\*&gt;</code> | 
 
 <a name="vec"></a>
 
