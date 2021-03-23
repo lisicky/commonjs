@@ -216,7 +216,7 @@ declare global {
      * @param {Array<*>} b
      * @return {Array<*>}
      */
-    zip(a: Array<any>, b: Array<any>): Array<Array<*>>
+    zip(a: Array<any>, b: Array<any>): Array<Array<any>>
   }
 
   // Array instance functions
