@@ -250,8 +250,12 @@ Array.zip = (a, b) => a.map((k, i) => [k, b[i]]);
 Object.defineProperty(Array.prototype, 'at', {
   value: function (i) {
     const l = this.length;
-    return this[i < 0 ? l - (Math.abs(i + 1) % l) - 1 : i % l];
-  }
+    if (!l) return undefined;
+    return this[((i % l) + l) % l]; // cyclical indexing
+  },
+  writable: true,
+  configurable: true,
+  enumerable: false,
 });
 
 /**
@@ -262,11 +266,19 @@ Object.defineProperty(Array.prototype, 'at', {
  * @param {number} n The chunk size
  * @return {Array<Array<*>>} An array of array chunks
  */
-Object.defineProperty(Array.prototype, 'chunk', {
-  value: function (n) {
-    return Array.times(i => this.slice(i * n, i * n + n), Math.ceil(this.length / n));
-  }
-});
+if (!Array.prototype.chunk) {
+  Object.defineProperty(Array.prototype, 'chunk', {
+    value: function (n) {
+      return Array.times(
+        (i) => this.slice(i * n, i * n + n),
+        Math.ceil(this.length / n)
+      );
+    },
+    writable: true,
+    configurable: true,
+    enumerable: false,
+  });
+}
 
 /**
  * Randomly shuffle an array in-place
@@ -275,11 +287,19 @@ Object.defineProperty(Array.prototype, 'chunk', {
  * @memberof Array.prototype
  * @return {Array<*>} The shuffled array
  */
-Object.defineProperty(Array.prototype, 'shuffle', {
-  value: function () {
-    return this.map(a => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map(a => a[1]);
-  }
-});
+if (!Array.prototype.shuffle) {
+  Object.defineProperty(Array.prototype, 'shuffle', {
+    value: function () {
+      return this
+        .map(a => [Math.random(), a])
+        .sort((a, b) => a[0] - b[0])
+        .map(a => a[1]);
+    },
+    writable: true,
+    configurable: true,
+    enumerable: false,
+  });
+}
 
 /**
  * A 2d vector

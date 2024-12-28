@@ -1,6 +1,6 @@
 {
   "name": "@basementuniverse/commonjs",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "description": "A collection of useful functions",
   "main": "common.js",
   "types": "common.d.ts",
