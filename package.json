@@ -1,5 +1,5 @@
 {
-  "name": "@basementuniverse/commonjs",
+  "name": "@cardananium/commonjs",
   "version": "1.2.11",
   "description": "A collection of useful functions",
   "main": "common.js",
